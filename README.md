@@ -1,4 +1,9 @@
 # MultiGRN
+# Input files: 
+## expr_matrix:  expression matrix (row: cell, column: gene)
+## cell_adj: Cell-Cell interaction adjacency matrix
+## gene_adj: Gene regulatory network adjacency matrix
+
 
 import numpy as np
 import networkx as nx
@@ -149,10 +154,6 @@ class BootstrapInfluenceSimulator:
             tgname = self.sim.gene_names[tgi] if isinstance(tgi, int) else tgi
             print(f"Source Cell: {scname}, Source Gene: {sgname} - Target Cell: {tcname}, Target Gene: {tgname}, Influence Score: {val:.6f}")
             
-# Input files: 
-# expr_matrix:  expression matrix (row: cell, column: gene)
-# cell_adj: Cell-Cell interaction adjacency matrix
-# gene_adj: Gene regulatory network adjacency matrix
 
 sim = MultilayerInfluenceSimulator(
   cell_adj=cell_adj,
