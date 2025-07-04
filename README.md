@@ -1,10 +1,16 @@
 # MultiGRN
-# Input files: 
-## expr_matrix:  expression matrix (row: cell, column: gene)
-## cell_adj: Cell-Cell interaction adjacency matrix
-## gene_adj: Gene regulatory network adjacency matrix
+## Input files: 
 
 
+expr_matrix:  expression matrix (row: cell, column: gene)
+
+
+cell_adj: Cell-Cell interaction adjacency matrix
+
+
+gene_adj: Gene regulatory network adjacency matrix
+
+```python
 import numpy as np
 import networkx as nx
 from collections import defaultdict
@@ -175,4 +181,4 @@ bootstrap_sim = BootstrapInfluenceSimulator(
 
 averaged_result, all_runs = bootstrap_sim.run_bootstrap(n_rounds=100)
 
-
+```
